@@ -1,16 +1,13 @@
 "use client"
 
-import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import {
     ConnectionProvider,
     WalletProvider as SolanaWalletProvider,
 } from "@solana/wallet-adapter-react";
 import { UnifiedWalletProvider } from "@jup-ag/wallet-adapter";
-import { clusterApiUrl } from "@solana/web3.js";
 import { ReactNode } from "react";
 
-const network = WalletAdapterNetwork.Mainnet;
-const endpoint = "https://api.mainnet-beta.solana.com";
+const endpoint = process.env.NEXT_PUBLIC_RPC!;
 
 export function WalletProvider({ children }: { children: ReactNode }) {
     return (
