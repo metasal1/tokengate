@@ -8,7 +8,7 @@ import { getAccount, getAssociatedTokenAddress, getMint } from "@solana/spl-toke
 
 const REQUIRED_BALANCE = Number(process.env.NEXT_PUBLIC_REQUIRED_BALANCE!)
 const RPC_ENDPOINT = process.env.NEXT_PUBLIC_RPC!;
-const JUPITER_SWAP_URL = "https://jup.ag/swap/SOL-ErbakSHZWeLnq1hsqFvNz8FvxSzggrfyNGB6TEGSSgNE?referrer=2KWULBeCsChsZ3VwtQf4tYhVTaeG64PN8UFpWaEfST8u&feeBps=100"
+const JUPITER_SWAP_URL = `https://jup.ag/swap/SOL-${process.env.NEXT_PUBLIC_MINT}?referrer=2KWULBeCsChsZ3VwtQf4tYhVTaeG64PN8UFpWaEfST8u&feeBps=100`
 
 export default function TokenGate() {
   const { publicKey, disconnect } = useWallet()
